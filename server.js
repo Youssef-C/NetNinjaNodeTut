@@ -16,7 +16,7 @@ const server = http.createServer((req, res) => {
     // set header content type
     res.setHeader('Content-type', 'text/html');
 
-    let path = './views/';
+    let path = './public/';
     //Switch statement, checks what case is true and deliveres a certain page based on that
     switch(req.url) {
         case '/':
