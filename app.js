@@ -1,4 +1,5 @@
-const express = require('express'); 
+const express = require('express');
+const morgan = require('morgan');
 
 //Express App
 const app = express();
@@ -10,6 +11,10 @@ app.set('views', 'public');
 //request listener
 app.listen(/*This number refers to the port being listened to*/3000);   
 
+
+//Middleware and static files
+app.use(express.static('public'));
+app.use(morgan('dev')); 
 
 app.get('/', (req, res) => {
     const blogs = [
