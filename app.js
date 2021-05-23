@@ -36,6 +36,11 @@ app.get('/about', (req, res) => {
 })
 
 // blog Routes
+
+app.get('/blogs/create', (req, res) => {
+    res.render('create', { title: 'Create a new blog' });
+  });
+  
 app.get('/blogs', (req, res) => {
     Blog.find().sort({createdAt: -1 })
         .then((result) => {
@@ -50,12 +55,12 @@ app.post('/blogs', (req, res) => {
     const blog = new Blog(req.body);
 
     blog.save()
-        .then((result) => {
-            res.redirect('/blogs')
+        .then(result => {
+            res.redirect('/blogs');
         })
         .catch((err) => {
             console.log(err)
-        })
+        });
 });
 
 app.delete('/blogs/:id', (req, res) => {
