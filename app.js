@@ -32,6 +32,21 @@ app.get('/', (req, res) => {
     res.redirect('/blogs')
 })
 
+
+app.get('/api/random', (req, res) => {
+    res.send({ number: Math.floor(Math.random() * 1023)})
+})
+/*
+app.get('/api/custom_random/:num', (req, res) => { //http://localhost:3000/api/custom_random/300
+    res.send({ number: Math.floor(Math.random() * Number(req.params.num))})
+})
+
+app.get('/api/vowels/:word' (req, res) => {
+    // nånting räkna vokale
+    res.send({vowels: 2})
+})
+*/
+
 app.get('/about', (req, res) => {
     res.render('about', { title: 'About'});
     console.log("a request for About page was answered");
