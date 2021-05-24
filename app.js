@@ -2,9 +2,10 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const Blog = require('./models/blog');
+const expect = require('chai').expect;
+const converter = require('../public/converter'); 
 const { render } = require('ejs');
 
-//LIVE SHARE https://prod.liveshare.vsengsaas.visualstudio.com/join?8EFE0F738C4F11AC8C06D1200C46548CE671
 
 //Express App
 const app = express();
@@ -36,6 +37,7 @@ app.get('/', (req, res) => {
 app.get('/api/random', (req, res) => {
     res.send({ number: Math.floor(Math.random() * 1023)})
 })
+
 /*
 app.get('/api/custom_random/:num', (req, res) => { //http://localhost:3000/api/custom_random/300
     res.send({ number: Math.floor(Math.random() * Number(req.params.num))})
