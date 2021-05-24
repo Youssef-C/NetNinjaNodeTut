@@ -1,6 +1,5 @@
-var express = require("express");
+/*var express = require("express");
 var app = express();
-var converter = require("./converter");
 
 app.get("/rgbToHex", function(req, res) {
 
@@ -9,7 +8,6 @@ app.get("/rgbToHex", function(req, res) {
   var blue  = parseInt(req.query.blue, 10);
   var hex = converter.rgbToHex(red, green, blue);
   res.send(hex);
-
 });
 
-app.listen(5000);
+app.listen(3000);*/

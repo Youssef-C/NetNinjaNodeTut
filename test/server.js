@@ -1,4 +1,4 @@
-var expect  = require("chai").expect;
+/*var expect  = require("chai").expect;
 var request = require("request");
 
 describe("Color Code Converter API", function() {
@@ -23,4 +23,4 @@ describe("Color Code Converter API", function() {
 
   });
 
-});
+});*/

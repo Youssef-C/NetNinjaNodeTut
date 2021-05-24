@@ -3,7 +3,6 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const Blog = require('./models/blog');
 const expect = require('chai').expect;
-const converter = require('../public/converter'); 
 const { render } = require('ejs');
 
 
@@ -35,8 +34,14 @@ app.get('/', (req, res) => {
 
 
 app.get('/api/random', (req, res) => {
-    res.send({ number: Math.floor(Math.random() * 1023)})
+    let ranNum =  res.send({ number: Math.floor(Math.random() * 1023)})
 })
+
+describe("value check", function() {
+      it("checks to see if the number is less than 1023", function() {
+        expect(ranNum).to.be.below(1023)
+      });
+  });
 
 /*
 app.get('/api/custom_random/:num', (req, res) => { //http://localhost:3000/api/custom_random/300

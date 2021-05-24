@@ -1,4 +1,4 @@
-const expect = require('chai').expect;
+/*const expect = require('chai').expect;
 const converter = require('../public/converter'); 
 
 describe("Color Code Converter", function() {
@@ -13,7 +13,7 @@ describe("Color Code Converter", function() {
         expect(blueHex).to.equal("0000ff");
       });
     });
-  });
+  });*/
 
 
 
